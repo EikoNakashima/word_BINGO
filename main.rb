@@ -11,7 +11,7 @@ N = gets.to_i
 #入力された単語の受け取り
 hit_words = Array.new(N){ gets.chomp }
 
-#入力された単語がヒットしたらtrueをhit_listに追加
+#入力された単語がビンゴカードの中身と一致したらtrueをhit_listに追加
 hit_list = Array.new(S*S)
 hit_words.each do |hit|
   if ix = word_list.find_index(hit)
@@ -19,7 +19,7 @@ hit_words.each do |hit|
   end
 end
 
-#hit_listを二次元配列に変更
+#hit_listを二次元配列に変換
 hit_card = hit_list.each_slice(S).to_a
 
 #斜め判定
